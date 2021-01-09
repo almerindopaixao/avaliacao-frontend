@@ -5,8 +5,9 @@
 </p>
 
 <p align="center">
-  <a href="#-desafio">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-desafio">Desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-fontes">Fontes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-resultado">Resultado</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
@@ -18,9 +19,53 @@
 
 ## :computer: Desafio
 
+Elaborar um fluxo básico de listagem, cadastro, edição, busca e exclusão de empresas (CRUD) com interações de front-end, onde todas as páginas deverão ser responsivas.
+
+Deve ser feita a implementação usando algum dos frameworks SPA ( Vue, React ou Angular )
+
+Para o CSS utilizar algum pré-processador SASS ou LESS
+
 ## :rocket: Tecnologias
 
+- TypeScript
+- React
+- JavaScript
+- Sass
+- Eslint
+- Prettier
+
+<br>
+
+## :pencil: Fontes
+
+- Font awesome
+- Nunito
+
+<br>
+
 ## :heavy_check_mark: Resultado
+
+### Landing Page
+
+<img src="./.github/landing-page.png" alt="Landing Page">
+
+### Landing Page Mobile
+
+<img src="./.github/landing-page-mobile.png" alt="Landing Page Mobile">
+
+### Register Page
+
+<img src="./.github/register-page.png" alt="Register Page">
+
+### Register Page Mobile
+
+<img src="./.github/register-page-mobile.png" alt="Register Page Mobile">
+
+### Edit Page
+
+<img src="./.github/edit-page.png" alt="Edit Page">
+
+<br>
 
 ## :memo: Licença
 
@@ -30,4 +75,3 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.c
 <br>
 <p align="center">&copy; Powered by Almerindo Paixão :heart:</P>
 <br>
----
