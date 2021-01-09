@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import { Routes } from '../routes';
@@ -9,11 +10,11 @@ import '../styles/main.scss';
 
 function App(): JSX.Element {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Routes />
-      <ToastContainer autoClose={3000} className="toast-container" />
-    </>
+      <ToastContainer autoClose={6000} className="toast-container" />
+    </BrowserRouter>
   );
 }
 

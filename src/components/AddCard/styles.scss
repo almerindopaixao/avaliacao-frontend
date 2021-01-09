@@ -1,0 +1,22 @@
+#add-card {
+  @include card-config;
+  border: 2px solid $darkGray-color;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 8rem;
+  margin-top: $large-spacing;
+
+  color: #cac7c7;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  strong {
+    margin-left: 5px;
+  }
+}

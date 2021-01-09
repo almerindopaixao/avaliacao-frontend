@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaUser, FaBuromobelexperte, FaCog } from 'react-icons/fa';
 
 import Logo from '../../../assets/img/logo-conecti.svg';
@@ -8,7 +9,9 @@ export function Header(): JSX.Element {
 
   return (
     <header id="header-container">
-      <img src={Logo} alt="Logo Conecti" />
+      <Link to="/">
+        <img src={Logo} alt="Logo Conecti" />
+      </Link>
 
       <div className="data-of-user-container">
         <p>Almerindo Paixão</p>

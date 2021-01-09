@@ -3,3 +3,9 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@mixin card-config {
+  margin: $small-spacing 0;
+  padding: $small-spacing $medium-spacing;
+  border-radius: 1rem;
+}

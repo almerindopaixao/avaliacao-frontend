@@ -19,11 +19,20 @@ body, input, button, textarea {
 }
 
 .toast-container .Toastify__toast--success {
-  background-color: $primary-color;
+  background-color: $success-color;
   font-size: $medium-sizes - 0.2rem;
 }
 
 .toast-container .Toastify__toast--error {
   background-color: $danger-color;
   font-size: $medium-sizes - 0.2rem;
+}
+
+#container {
+  max-width: 60rem;
+  background: $white-color;
+  margin: $large-spacing auto;
+  padding: $large-spacing;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
 }

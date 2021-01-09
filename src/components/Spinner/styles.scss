@@ -1,0 +1,38 @@
+.spinner {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 84px;
+  height: 84px;
+  border-radius: 84px;
+  margin: $extraLarge-spacing auto;
+}
+
+.spinner::before {
+  position: absolute;
+  content: "";
+  width: 84px;
+  height: 84px;
+  border-radius: 84px;
+  color: $primary-color;
+  box-shadow: inset -5px 0 0 5px currentColor;
+  clip: rect(0, 84px, 42px, 0);
+  animation: rotator 1s infinite linear;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(-180deg);
+    box-shadow: inset -5px 0 0 5px currentColor;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    box-shadow: inset -1px 0 0 1px currentColor;
+  }
+
+  100% {
+    transform: rotate(180deg);
+    box-shadow: inset -5px 0 0 5px currentColor;
+  }
+}

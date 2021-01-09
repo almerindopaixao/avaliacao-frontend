@@ -1,0 +1,45 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: $medium-spacing;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $medium-spacing;
+
+    font-size: $medium-sizes + 0.2rem;
+  }
+
+  input {
+    height: 40px;
+    font-size: $medium-sizes;
+    border: 1px solid $darkGray-color;
+    padding: 0 $small-spacing;
+    border-radius: 4px;
+    margin-top: 5px;
+    color: $input-color;
+
+    &:hover {
+      border: 1px solid $primary-color;
+    }
+  }
+
+  .button-submit {
+    border: none;
+    background: $primary-color;
+    color: $white-color;
+    margin-top: $medium-spacing;
+    padding: $medium-spacing;
+
+    font-size: $large-sizes - 0.3rem;
+    font-weight: 800;
+    cursor: pointer;
+
+    transition: opacity 0.5s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

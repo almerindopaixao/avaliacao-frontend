@@ -1,0 +1,39 @@
+#card {
+  background: $white-color;
+  @include card-config;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  box-shadow: -3px 3px 0 $darkGray-color;
+
+  p {
+    color: $lightGray-color;
+    font-size: $medium-sizes;
+  }
+
+  h2 {
+    font-size: $large-sizes + 0.5rem;
+    margin-bottom: $small-spacing;
+  }
+
+  .fa-edit, .fa-cancel {
+    color:  #cac7c7;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .fa-edit {
+    margin-right: 10px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .fa-cancel:hover {
+    color: $danger-color;
+  }
+}

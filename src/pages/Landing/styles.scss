@@ -1,3 +1,11 @@
 #landing-container {
+  margin: 0 $medium-spacing;
+  display: flex;
+  flex-direction: column;
+
   border-bottom: 2px solid $white-color;
+
+  &:last-child {
+    margin-bottom: $superLarge-spacing;
+  }
 }
