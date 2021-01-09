@@ -1,0 +1,8 @@
+body {
+  color: $primary-color;
+  background-color: $background-color;
+}
+
+body, input, button, textarea {
+  font: 600 18px $font-base;
+}

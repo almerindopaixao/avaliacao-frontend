@@ -1,0 +1,16 @@
+/*Fonte*/
+$font-base: Nunito, sans-serif;
+
+/*Colors*/
+$primary-color: #476b82;
+$secondary-color: #b5d0e6;
+$background-color: #efefef;
+$lightGray-color: #dfdfdf;
+$white-color: #fff;
+$black-color: #000;
+
+/*Breakpoints for responsive*/
+$BREAKPOINT-DESK: "only screen and (min-width: 1280px)";
+$BREAKPOINT-TABLET-LAND: "only screen and (min-width: 975px)";
+$BREAKPOINT-TABLET: "only screen and (min-width: 600px)";
+$BREAKPOINT-MOBILE-LAND: "only screen and (min-width: 480px)";
