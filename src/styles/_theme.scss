@@ -2,12 +2,27 @@
 $font-base: Nunito, sans-serif;
 
 /*Colors*/
-$primary-color: #476b82;
+$primary-color: #74a8d9;
 $secondary-color: #b5d0e6;
 $background-color: #efefef;
 $lightGray-color: #dfdfdf;
 $white-color: #fff;
 $black-color: #000;
+$danger-color: #e75165;
+
+/*Spacings*/
+$small-spacing: 1rem;
+$medium-spacing: 2rem;
+$large-spacing: 3rem;
+$superLarge-spacing: 5rem;
+$extraLarge-spacing: 6rem;
+
+/*Font Sizes*/
+$small-sizes: 1.2rem;
+$medium-sizes: 1.8rem;
+$large-sizes: 2rem;
+$superLarge-sizes: 3rem;
+$extraLarge-sizes: 5rem;
 
 /*Breakpoints for responsive*/
 $BREAKPOINT-DESK: "only screen and (min-width: 1280px)";

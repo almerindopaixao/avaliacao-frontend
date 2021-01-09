@@ -1,8 +1,29 @@
+html {
+  font-size: 60%;
+}
+
 body {
+  font-family: $font-base;
   color: $primary-color;
   background-color: $background-color;
 }
 
 body, input, button, textarea {
-  font: 600 18px $font-base;
+  font-size: $medium-sizes;
+}
+
+@media #{$BREAKPOINT-TABLET} {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+.toast-container .Toastify__toast--success {
+  background-color: $primary-color;
+  font-size: $medium-sizes - 0.2rem;
+}
+
+.toast-container .Toastify__toast--error {
+  background-color: $danger-color;
+  font-size: $medium-sizes - 0.2rem;
 }

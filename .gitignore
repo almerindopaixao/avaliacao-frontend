@@ -7,10 +7,6 @@
 
 # testing
 /coverage
-components
-Patterns
-routes
-domain
 
 # production
 /build

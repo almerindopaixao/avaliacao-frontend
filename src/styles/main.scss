@@ -1,5 +1,19 @@
-// Configurações gerais
-
+// variables
 @import './theme';
+
+// General configs
 @import './global';
 @import './normalize';
+
+// Pages
+@import '../pages/Landing/styles.scss';
+@import '../pages/Register/styles.scss';
+@import '../pages/Edit/styles.scss';
+@import '../pages/Page404/styles.scss';
+
+// Components
+@import '../components/EnterpriseCard/styles.scss';
+@import '../components//Search/styles.scss';
+
+// Patterns
+@import '../patterns/components/Header/styles.scss';
