@@ -6,6 +6,7 @@ $primary-color: #74a8d9;
 $secondary-color: #b5d0e6;
 $background-color: #efefef;
 $lightGray-color: #dfdfdf;
+$darkGray-color: #dedede;
 $white-color: #fff;
 $black-color: #000;
 $danger-color: #e75165;
@@ -19,13 +20,13 @@ $extraLarge-spacing: 6rem;
 
 /*Font Sizes*/
 $small-sizes: 1.2rem;
-$medium-sizes: 1.8rem;
+$medium-sizes: 1.6rem;
 $large-sizes: 2rem;
 $superLarge-sizes: 3rem;
 $extraLarge-sizes: 5rem;
 
 /*Breakpoints for responsive*/
-$BREAKPOINT-DESK: "only screen and (min-width: 1280px)";
-$BREAKPOINT-TABLET-LAND: "only screen and (min-width: 975px)";
-$BREAKPOINT-TABLET: "only screen and (min-width: 600px)";
-$BREAKPOINT-MOBILE-LAND: "only screen and (min-width: 480px)";
+$BREAKPOINT-DESK: "only screen and (max-width: 1280px)";
+$BREAKPOINT-TABLET-LAND: "only screen and (max-width: 975px)";
+$BREAKPOINT-TABLET: "only screen and (max-width: 600px)";
+$BREAKPOINT-MOBILE-LAND: "only screen and (max-width: 480px)";

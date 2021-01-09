@@ -1,3 +1,45 @@
 #header-container {
   background: $white-color;
+  height: 8rem;
+  padding: 0 $medium-spacing;
+
+  @include display-flex-config;
+
+  border-bottom: 2px solid $darkGray-color;
+}
+
+.data-of-user-container {
+  @include display-flex-config;
+
+  width: 24rem;
+
+  p {
+    color: $primary-color;
+    font-size: $medium-sizes;
+    font-weight: 600;
+  }
+
+  svg {
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  svg:hover:not(.last){
+    opacity: 0.5;
+  }
+}
+
+@media #{$BREAKPOINT-TABLET} {
+  #header-container {
+    justify-content: center;
+  }
+  .data-of-user-container {
+    display: none;
+  }
+}
+
+@media #{$BREAKPOINT-MOBILE-LAND} {
+  #header-container {
+    height: 6.5rem;
+  }
 }

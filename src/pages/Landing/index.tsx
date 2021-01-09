@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+import React from 'react';
+// import { toast } from 'react-toastify';
 // import { EnterpriseCard } from '../../components';
 
-import { Enterprise } from '../../domain/Enterprise';
-import { api } from '../../services/api';
+// import { Enterprise } from '../../domain/Enterprise';
+// import { api } from '../../services/api';
+
+import { EnterpriseCard } from '../../components';
 
 export function Landing(): JSX.Element {
+  /*
   const [enterprise, setEnterprise] = useState<Enterprise[]>([]);
 
   useEffect(() => {
@@ -25,6 +28,27 @@ export function Landing(): JSX.Element {
         console.log(err);
       });
   }, [enterprise]);
+  */
 
-  return <h1>Lista de empresas</h1>;
+  return (
+    <main id="landing-container">
+      <EnterpriseCard
+        name="Empresa 1"
+        email="empresa1@teste.com.br"
+        cnpj="64385518000173"
+      />
+
+      <EnterpriseCard
+        name="Empresa 2"
+        email="empresa2@teste.com.br"
+        cnpj="31287325000120"
+      />
+
+      <EnterpriseCard
+        name="Empresa 3"
+        email="empresa3@teste.com.br"
+        cnpj="75046113000127"
+      />
+    </main>
+  );
 }
