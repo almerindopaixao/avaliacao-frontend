@@ -6,6 +6,10 @@
   @include display-flex-config;
 
   border-bottom: 2px solid $darkGray-color;
+
+  img {
+    width: 100%;
+  }
 }
 
 .data-of-user-container {
@@ -40,6 +44,6 @@
 
 @media #{$BREAKPOINT-MOBILE-LAND} {
   #header-container {
-    height: 6.5rem;
+    height: 7.5rem;
   }
 }

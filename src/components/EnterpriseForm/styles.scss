@@ -38,6 +38,8 @@
 
     transition: opacity 0.5s ease-in-out;
 
+    @include display-flex-center-config;
+
     &:hover {
       opacity: 0.8;
     }

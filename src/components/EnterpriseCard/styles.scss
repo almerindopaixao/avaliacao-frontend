@@ -36,4 +36,14 @@
   .fa-cancel:hover {
     color: $danger-color;
   }
+
+  &:last-child {
+    margin-bottom: $superLarge-spacing;
+  }
+
+  div + div {
+    @media #{$BREAKPOINT-TABLET} {
+      margin-top: $medium-spacing;
+    }
+  }
 }

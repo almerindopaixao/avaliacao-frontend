@@ -19,4 +19,10 @@
   strong {
     margin-left: 5px;
   }
+
+  @media #{$BREAKPOINT-MOBILE-LAND} {
+    strong {
+      text-align: center;
+    }
+  }
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { EnterpriseForm } from '../../components';
+import { EnterpriseForm, BackButton } from '../../components';
 
 export function Register(): JSX.Element {
   return (
-    <div id="container">
+    <main id="container">
       <h2 className="register-title">Cadastro</h2>
       <EnterpriseForm />
-    </div>
+      <BackButton />
+    </main>
   );
 }

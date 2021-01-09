@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { Enterprise } from '../../domain/Enterprise';
 import { api } from '../../services/api';
 
-import { EnterpriseCard, AddCard, Spinner } from '../../components';
+import { EnterpriseCard, AddCard, Spinner, Search } from '../../components';
 
 export function Landing(): JSX.Element {
   const [requestFinish, setRequestFinish] = useState<boolean>(false);
@@ -27,8 +27,16 @@ export function Landing(): JSX.Element {
 
   return (
     <main id="landing-container">
+      <Search
+        setRequestFinish={setRequestFinish}
+        setEnterprise={setEnterprises}
+      />
       <AddCard />
-      {requestFinish ? (
+      {enterprises.length == 0 && requestFinish ? (
+        <h3 className="no-search">
+          Não encontramos nenhuma empresa cadastrada
+        </h3>
+      ) : requestFinish ? (
         enterprises.map((enterprise) => {
           return (
             <EnterpriseCard

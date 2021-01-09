@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { EnterpriseForm } from '../../components';
+import { EnterpriseForm, BackButton } from '../../components';
 
 export type EditProps = {
   match: {
@@ -14,9 +14,10 @@ export function Edit(props: EditProps): JSX.Element {
   const name = props.match.params.name;
 
   return (
-    <div id="container">
+    <main id="container">
       <h2 className="edit-title">Editar</h2>
       <EnterpriseForm nameParams={name} />
-    </div>
+      <BackButton />
+    </main>
   );
 }

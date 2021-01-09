@@ -1,0 +1,21 @@
+#page404-container {
+  width: 100%;
+  height: 75vh;
+
+  @include display-flex-center-config;
+}
+
+.page404-title {
+  font-size: $extraLarge-sizes;
+  text-align: center;
+  margin-top: $extraLarge-spacing;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    font-size: $superLarge-sizes + 0.5rem;
+  }
+
+  @media #{$BREAKPOINT-MOBILE-LAND} {
+    font-size: $superLarge-sizes;
+  }
+
+}

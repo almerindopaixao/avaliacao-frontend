@@ -1,7 +1,5 @@
 export function convertStringToCnpj(text: string): string {
-  const textReplace = `${text.slice(0, 2)}.${text.slice(2, 5)}.${text.slice(
-    5,
-    8,
-  )}/${text.slice(8, 12)}-${text.slice(12, 14)}`;
+  const regex = /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g;
+  const textReplace = text.replace(regex, '$1.$2.$3/$4-$5');
   return textReplace;
 }

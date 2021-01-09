@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 
 import { api } from '../../services/api';
 // import { maskToCnpj } from '../../utils/maskToCnpj';
-
+// import { convertStringToCnpj } from '../../utils/convertStringToCnpj';
 import { Enterprise } from '../../domain/Enterprise';
 
 export type EnterpriseFormProps = {
@@ -15,26 +15,21 @@ export type EnterpriseFormProps = {
 export function EnterpriseForm({
   nameParams,
 }: EnterpriseFormProps): JSX.Element {
-  const initialData = {
-    name: '',
-    email: '',
-    cnpj: '',
-  };
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [cnpj, setCnpj] = useState<string>('');
 
   useEffect(() => {
     async function getEnterprise() {
       try {
         const response = await api.get(`?text=${nameParams}`);
-        const data: Enterprise = response.data;
+        const data: Enterprise[] = response.data;
 
-        console.log(data);
-        initialData.name = data.name;
-        initialData.email = data.email;
-        initialData.cnpj = data.cnpj;
+        setName(data[0].name);
+        setEmail(data[0].email);
+        setCnpj(data[0].cnpj);
       } catch (e) {
-        toast.error(
-          'Desculpe, Infelizmente não conseguimos realizar uma conexão com a api :( !!',
-        );
+        history.push('*');
       }
     }
 
@@ -42,10 +37,6 @@ export function EnterpriseForm({
       getEnterprise();
     }
   }, []);
-
-  const [name, setName] = useState<string>(initialData.name);
-  const [email, setEmail] = useState<string>(initialData.email);
-  const [cnpj, setCnpj] = useState<string>(initialData.cnpj);
 
   const history = useHistory();
 
@@ -59,8 +50,6 @@ export function EnterpriseForm({
         cnpj: Yup.string().required('O campo CNPJ precisa ser preenchido'),
       });
 
-      await schemaOne.validate({ email, name, cnpj }, { abortEarly: false });
-
       const schemaTwo = Yup.object().shape({
         email: Yup.string().email('O e-mail informado é informado'),
         name: Yup.string()
@@ -72,9 +61,16 @@ export function EnterpriseForm({
         ),
       });
 
+      await schemaOne.validate({ email, name, cnpj }, { abortEarly: false });
+
+      if (!Number(cnpj))
+        throw new Yup.ValidationError('O CNPJ só pode conter números');
+
       await schemaTwo.validate({ email, name, cnpj }, { abortEarly: false });
 
-      await api.post('', { email, name, cnpj });
+      nameParams
+        ? await api.put('', { email, name, cnpj })
+        : await api.post('', { email, name, cnpj });
 
       toast.success('Empresa cadastrada com sucesso');
 

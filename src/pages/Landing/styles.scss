@@ -4,8 +4,10 @@
   flex-direction: column;
 
   border-bottom: 2px solid $white-color;
+}
 
-  &:last-child {
-    margin-bottom: $superLarge-spacing;
-  }
+.no-search {
+  text-align: center;
+  font-size: $superLarge-sizes;
+  margin: $superLarge-spacing 0;
 }
