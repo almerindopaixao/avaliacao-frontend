@@ -1,8 +1,12 @@
 # Avaliação Front-End
 
+<br>
+
 <p align="center">
   <img alt="conecti" title="conecti" src="./.github/logo-conecti.svg">
 </p>
+
+<br>
 
 <p align="center">
   <a href="#computer:-desafio">Desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
