@@ -1,7 +1,7 @@
 # Avaliação Front-End
 
 <p align="center">
-  <img alt="conecti" title="conecti" src="https://github.com/almerindopaixao/happy/blob/main/.github/logo-conecti.svg">
+  <img alt="conecti" title="conecti" src="./.github/logo-conecti.svg">
 </p>
 
 <p align="center">
