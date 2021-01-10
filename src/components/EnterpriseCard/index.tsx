@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { Enterprise } from '../../domain/Enterprise';
 
 export type EnterpriseCardProps = {
+  index: number;
   id: string;
   name: string;
   email: string;
@@ -24,13 +25,14 @@ export function EnterpriseCard({
   cnpj,
   enterprises,
   setEnterprises,
+  index,
 }: EnterpriseCardProps): JSX.Element {
   async function handleClick() {
     try {
       await api.delete(`/${id}`);
 
-      const newEnterprises = enterprises.splice(0, enterprises.length - 1);
-      setEnterprises(newEnterprises);
+      enterprises.splice(index, 1);
+      setEnterprises(enterprises);
 
       toast.success(`${name} deletada com sucesso !!`);
     } catch (e) {

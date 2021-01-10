@@ -37,11 +37,12 @@ export function Landing(): JSX.Element {
           Não encontramos nenhuma empresa cadastrada
         </h3>
       ) : requestFinish ? (
-        enterprises.map((enterprise) => {
+        enterprises.map((enterprise, index) => {
           return (
             <EnterpriseCard
               key={enterprise.id}
               id={enterprise.id}
+              index={index}
               name={enterprise.name}
               email={enterprise.email}
               cnpj={enterprise.cnpj}
