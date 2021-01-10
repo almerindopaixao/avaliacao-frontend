@@ -69,9 +69,8 @@ export function EnterpriseForm({
 
       await schemaOne.validate({ email, name, cnpj }, { abortEarly: false });
 
-      if (cnpjValidation(cnpj)) {
+      if (cnpjValidation(cnpj))
         throw new Yup.ValidationError('O CNPJ é inválido');
-      }
 
       await schemaTwo.validate({ email, name, cnpj }, { abortEarly: false });
 
