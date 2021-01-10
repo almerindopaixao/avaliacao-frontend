@@ -17,8 +17,9 @@
 </p>
 
 <p align="center">
- <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=74a8d9&labelColor=000000" alt="PRs welcome!" />
- <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=74a8d9&labelColor=000000" />
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=74a8d9&labelColor=000000" alt="PRs welcome!" />&nbsp;&nbsp;
+ <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=74a8d9&labelColor=000000" />&nbsp;&nbsp;
+ <a href="https://app.netlify.com/sites/avaliacao-frontend/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/0017a2e7-e529-43e7-988c-30fb40288f89/deploy-status" /></a>
 </p>
 
 ## :computer: Desafio
