@@ -48,7 +48,6 @@ export function Search({
       setRequestFinish(true);
     } catch (e) {
       toast.error('Desculpe, não conseguimos realizar a busca no momento');
-      console.log(e);
     }
   }
 
@@ -56,7 +55,7 @@ export function Search({
     <form onSubmit={handleSubmitSearch} className="search-box">
       <input
         type="text"
-        placeholder="Buscar Empresa"
+        placeholder="Buscar empresa"
         value={name}
         onChange={(e) => setName(e.target.value)}
         list="suggestions-for-search"

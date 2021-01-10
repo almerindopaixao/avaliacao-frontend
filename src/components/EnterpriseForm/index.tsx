@@ -59,8 +59,8 @@ export function EnterpriseForm({
       const schemaTwo = Yup.object().shape({
         email: Yup.string().email('O e-mail informado é inválido'),
         name: Yup.string()
-          .max(20, 'O nome informado deve conter entre 3 a 20 caracteres')
-          .min(4, 'O nome informado deve conter entre 2 a 20 caracteres'),
+          .max(20, 'O nome informado deve conter entre 4 a 20 caracteres')
+          .min(4, 'O nome informado deve conter entre 4 a 20 caracteres'),
         cnpj: Yup.string().length(
           14,
           'O CNPJ informado deve conter 14 caracteres',
@@ -77,7 +77,7 @@ export function EnterpriseForm({
       toast.success(
         `${
           nameParams && idParams ? 'Edição' : 'Cadastro'
-        } enviado, estamos usando proxy então essa operação pode levar alguns segundos`,
+        } enviado, estamos usando proxy então esta operação pode levar alguns segundos`,
       );
 
       nameParams && idParams
@@ -99,7 +99,7 @@ export function EnterpriseForm({
       }
 
       if (err.isAxiosError) {
-        toast.error('Deculpe, Não conseguimos acessar a API :( !!');
+        toast.error('Desculpe, não conseguimos acessar a API :( !!');
       }
     }
   }
@@ -139,7 +139,7 @@ export function EnterpriseForm({
           onChange={(e) => {
             setCnpj(convertCnpjToString(e.target.value));
           }}
-          placeholder="CNPJ da Empresa"
+          placeholder="CNPJ da empresa"
         />
       </label>
 

@@ -18,7 +18,7 @@ export function Landing(): JSX.Element {
         setEnterprises(data);
         setRequestFinish(true);
       } catch (err) {
-        toast.error('Ops, não foi possível realizar a conexão com os dados');
+        toast.error('Ops, não foi possível realizar a conexão com a API :(');
       }
     }
 
