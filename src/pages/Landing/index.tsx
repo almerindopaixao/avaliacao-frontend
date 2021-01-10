@@ -41,9 +41,12 @@ export function Landing(): JSX.Element {
           return (
             <EnterpriseCard
               key={enterprise.id}
+              id={enterprise.id}
               name={enterprise.name}
               email={enterprise.email}
               cnpj={enterprise.cnpj}
+              enterprises={[...enterprises]}
+              setEnterprises={setEnterprises}
             />
           );
         })

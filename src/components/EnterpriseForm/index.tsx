@@ -4,16 +4,18 @@ import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import { api } from '../../services/api';
-// import { maskToCnpj } from '../../utils/maskToCnpj';
-// import { convertStringToCnpj } from '../../utils/convertStringToCnpj';
+import { maskToCnpj } from '../../utils/maskToCnpj';
+import { convertCnpjToString } from '../../utils/convertCnpjToString';
 import { Enterprise } from '../../domain/Enterprise';
 
 export type EnterpriseFormProps = {
   nameParams?: string;
+  idParams?: string;
 };
 
 export function EnterpriseForm({
   nameParams,
+  idParams,
 }: EnterpriseFormProps): JSX.Element {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -22,6 +24,9 @@ export function EnterpriseForm({
   useEffect(() => {
     async function getEnterprise() {
       try {
+        toast.success(
+          'Buscando dados da empresa..., estamos usando proxy então essa operação pode levar alguns segundos',
+        );
         const response = await api.get(`?text=${nameParams}`);
         const data: Enterprise[] = response.data;
 
@@ -33,7 +38,7 @@ export function EnterpriseForm({
       }
     }
 
-    if (nameParams) {
+    if (nameParams && idParams) {
       getEnterprise();
     }
   }, []);
@@ -44,6 +49,8 @@ export function EnterpriseForm({
     e.preventDefault();
 
     try {
+      console.log(cnpj);
+
       const schemaOne = Yup.object().shape({
         email: Yup.string().required('O campo e-mail precisa ser preenchido'),
         name: Yup.string().required('O campo nome precisa ser preenchido'),
@@ -68,8 +75,14 @@ export function EnterpriseForm({
 
       await schemaTwo.validate({ email, name, cnpj }, { abortEarly: false });
 
+      toast.success(
+        `${
+          nameParams ? 'Edição' : 'Cadastro'
+        } enviado, estamos usando proxy então essa operação pode levar alguns segundos`,
+      );
+
       nameParams
-        ? await api.put('', { email, name, cnpj })
+        ? await api.put(`/${idParams}`, { email, name, cnpj })
         : await api.post('', { email, name, cnpj });
 
       toast.success('Empresa cadastrada com sucesso');
@@ -83,9 +96,7 @@ export function EnterpriseForm({
       }
 
       if (err.response) {
-        err.response.data.errors.forEach((error: string) => {
-          toast.error(error);
-        });
+        toast.error(err);
       }
 
       if (err.isAxiosError) {
@@ -122,10 +133,13 @@ export function EnterpriseForm({
         CNPJ:
         <input
           type="text"
-          maxLength={14}
+          maxLength={18}
           id="cnpj"
-          value={cnpj}
-          onChange={(e) => setCnpj(e.target.value)}
+          value={maskToCnpj(cnpj)}
+          onKeyPress={(e) => isNaN(parseFloat(e.key)) && e.preventDefault()}
+          onChange={(e) => {
+            setCnpj(convertCnpjToString(e.target.value));
+          }}
           placeholder="CNPJ da Empresa"
         />
       </label>

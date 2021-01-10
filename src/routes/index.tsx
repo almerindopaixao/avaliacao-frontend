@@ -8,7 +8,7 @@ export function Routes(): JSX.Element {
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route exact path="/enterprise/register" component={Register} />
-      <Route exact path="/enterprise/:name/edit" component={Edit} />
+      <Route exact path="/enterprise/:name/edit/:id" component={Edit} />
       <Route path="*" component={Page404} />
     </Switch>
   );

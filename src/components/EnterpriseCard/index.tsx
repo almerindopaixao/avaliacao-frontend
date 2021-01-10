@@ -6,21 +6,32 @@ import { convertStringToCnpj } from '../../utils/convertStringToCnpj';
 import { api } from '../../services/api';
 import { toast } from 'react-toastify';
 
+import { Enterprise } from '../../domain/Enterprise';
+
 export type EnterpriseCardProps = {
+  id: string;
   name: string;
   email: string;
   cnpj: string;
+  enterprises: Enterprise[];
+  setEnterprises: React.Dispatch<React.SetStateAction<Enterprise[]>>;
 };
 
 export function EnterpriseCard({
+  id,
   name,
   email,
   cnpj,
+  enterprises,
+  setEnterprises,
 }: EnterpriseCardProps): JSX.Element {
   async function handleClick() {
     try {
-      await api.delete(`?text=${name}`);
-      console.log(`deletado ${name}`);
+      await api.delete(`/${id}`);
+
+      const newEnterprises = enterprises.splice(0, enterprises.length - 1);
+      setEnterprises(newEnterprises);
+
       toast.success(`${name} deletada com sucesso !!`);
     } catch (e) {
       toast.error('Não foi possível deletar a empresa :(');
@@ -36,7 +47,7 @@ export function EnterpriseCard({
         </p>
       </div>
       <div>
-        <Link to={`/enterprise/${name}/edit`}>
+        <Link to={`/enterprise/${name}/edit/${id}`}>
           <FaEdit className="fa-edit" size={24} />
         </Link>
         <FaTrash onClick={handleClick} className="fa-cancel" size={24} />

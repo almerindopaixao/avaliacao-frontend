@@ -29,6 +29,8 @@ Deve ser feita a implementação usando algum dos frameworks SPA ( Vue, React ou
 
 Para o CSS utilizar algum pré-processador SASS ou LESS
 
+<br>
+
 ## :rocket: Tecnologias
 
 - TypeScript

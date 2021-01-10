@@ -1,1 +1,2 @@
-export const BASE_URL = 'http://avaliacao.conecti.com.br/front/api/clients';
+export const BASE_URL =
+  'https://cors-anywhere.herokuapp.com/http://avaliacao.conecti.com.br/front/api/clients';
