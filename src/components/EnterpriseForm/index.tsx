@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import { api } from '../../services/api';
 import { maskToCnpj } from '../../utils/maskToCnpj';
 import { convertCnpjToString } from '../../utils/convertCnpjToString';
+import { cnpjValidation } from '../../utils/cnpjValidation';
 import { Enterprise } from '../../domain/Enterprise';
 
 export type EnterpriseFormProps = {
@@ -49,8 +50,6 @@ export function EnterpriseForm({
     e.preventDefault();
 
     try {
-      console.log(cnpj);
-
       const schemaOne = Yup.object().shape({
         email: Yup.string().required('O campo e-mail precisa ser preenchido'),
         name: Yup.string().required('O campo nome precisa ser preenchido'),
@@ -58,7 +57,7 @@ export function EnterpriseForm({
       });
 
       const schemaTwo = Yup.object().shape({
-        email: Yup.string().email('O e-mail informado é informado'),
+        email: Yup.string().email('O e-mail informado é inválido'),
         name: Yup.string()
           .max(20, 'O nome informado deve conter entre 3 a 20 caracteres')
           .min(4, 'O nome informado deve conter entre 2 a 20 caracteres'),
@@ -70,18 +69,19 @@ export function EnterpriseForm({
 
       await schemaOne.validate({ email, name, cnpj }, { abortEarly: false });
 
-      if (!Number(cnpj))
-        throw new Yup.ValidationError('O CNPJ só pode conter números');
+      if (cnpjValidation(cnpj)) {
+        throw new Yup.ValidationError('O CNPJ é inválido');
+      }
 
       await schemaTwo.validate({ email, name, cnpj }, { abortEarly: false });
 
       toast.success(
         `${
-          nameParams ? 'Edição' : 'Cadastro'
+          nameParams && idParams ? 'Edição' : 'Cadastro'
         } enviado, estamos usando proxy então essa operação pode levar alguns segundos`,
       );
 
-      nameParams
+      nameParams && idParams
         ? await api.put(`/${idParams}`, { email, name, cnpj })
         : await api.post('', { email, name, cnpj });
 
